@@ -6,7 +6,8 @@
 import telebot
 import random
 from telebot import types
-from config import token
+import time
+from config import token, channel
 
 # Загружаем список анекдотов из файла
 # если текстовый файл находится не в каталоге программы, то пишем полный путь к нему
@@ -17,6 +18,9 @@ f.close()
 
 # Создаем бота
 bot = telebot.TeleBot(token)
+
+# Адрес телеграм-канала, начинается с @
+CHANNEL_NAME = channel
 
 
 # Команда start
@@ -40,6 +44,12 @@ def handle_text(message):
     # Отсылаем юзеру сообщение в его чат
     bot.send_message(message.chat.id, answer)
 
+
+fl = 'start'
+# посылаются случайные шутки через случайные периоды времени
+while fl == 'start':
+    bot.send_message(CHANNEL_NAME, random.choice(funs))
+    time.sleep(random.randint(60, 3600))
 
 # Запускаем бота
 bot.polling(none_stop=True, interval=0)
