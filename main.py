@@ -1,6 +1,7 @@
 # pythonProject3
 
 # БОТ, ВЕДУЩИЙ TELEGRAM-КАНАЛ С АНЕКДОТАМИ
+# Бот присылает случайный анекдот через случайное время в группу
 # По нажатию кнопки бот присылает случайный анекдот в личку
 
 import telebot
@@ -49,7 +50,8 @@ fl = 'start'
 # посылаются случайные шутки через случайные периоды времени
 while fl == 'start':
     bot.send_message(CHANNEL_NAME, random.choice(funs))
-    time.sleep(random.randint(60, 3600))
+    # Запускаем бота
+    bot.polling(none_stop=True, interval=0)
+    time.sleep(random.randint(30))
 
-# Запускаем бота
-bot.polling(none_stop=True, interval=0)
+
