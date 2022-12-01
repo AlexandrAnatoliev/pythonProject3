@@ -46,12 +46,12 @@ def handle_text(message):
     bot.send_message(message.chat.id, answer)
 
 
-fl = 'start'
+# Запускаем бота
+bot.polling(none_stop=True, interval=0)
+
+# fl = 'start'
 # посылаются случайные шутки через случайные периоды времени
-while fl == 'start':
-    bot.send_message(CHANNEL_NAME, random.choice(funs))
-    # Запускаем бота
-    bot.polling(none_stop=True, interval=0)
-    time.sleep(random.randint(30))
+# while fl == 'start':
+#    bot.send_message(CHANNEL_NAME, random.choice(funs))
 
-
+#    time.sleep(random.randint(30))
