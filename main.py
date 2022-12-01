@@ -1,14 +1,12 @@
 # pythonProject3
 
-# БОТ, ВЕДУЩИЙ TELEGRAM-КАНАЛ С АНЕКДОТАМИ
-# Бот присылает случайный анекдот через случайное время в группу
+# БОТ, ДЛЯ TELEGRAM-КАНАЛА С АНЕКДОТАМИ
 # По нажатию кнопки бот присылает случайный анекдот в личку
 
 import telebot
 import random
 from telebot import types
-import time
-from config import token, channel
+from config import token
 
 # Загружаем список анекдотов из файла
 # если текстовый файл находится не в каталоге программы, то пишем полный путь к нему
@@ -19,10 +17,6 @@ f.close()
 
 # Создаем бота
 bot = telebot.TeleBot(token)
-
-# Адрес телеграм-канала, начинается с @
-CHANNEL_NAME = channel
-
 
 # Команда start
 @bot.message_handler(commands=["start"])
@@ -49,9 +43,3 @@ def handle_text(message):
 # Запускаем бота
 bot.polling(none_stop=True, interval=0)
 
-# fl = 'start'
-# посылаются случайные шутки через случайные периоды времени
-# while fl == 'start':
-#    bot.send_message(CHANNEL_NAME, random.choice(funs))
-
-#    time.sleep(random.randint(30))
