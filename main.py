@@ -9,7 +9,9 @@ from telebot import types
 #from config import token
 
 # удалить токен позднее
-token = "5969843689:AAFskKqCFHbh5pIHCkTQFPyStOVMRJl2G20"
+#token = "5969843689:AAFskKqCFHbh5pIHCkTQFPyStOVMRJl2G20"
+# тестовый токен
+token = "5943261012:AAENwlcynSTVsyFMUSFIX9CVde_73XwNy-Q"
 
 # Загружаем список анекдотов из файла
 # если текстовый файл находится не в каталоге программы, то пишем полный путь к нему
