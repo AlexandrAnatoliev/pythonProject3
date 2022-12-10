@@ -6,7 +6,10 @@
 import telebot
 import random
 from telebot import types
-from config import token
+#from config import token
+
+# удалить токен позднее
+token = "5969843689:AAFskKqCFHbh5pIHCkTQFPyStOVMRJl2G20"
 
 # Загружаем список анекдотов из файла
 # если текстовый файл находится не в каталоге программы, то пишем полный путь к нему
